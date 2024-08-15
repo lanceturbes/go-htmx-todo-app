@@ -1,0 +1,30 @@
+package main
+
+templ mainLayout(title string) {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8"/>
+			<meta name="color-scheme" content="light dark"/>
+			<link rel="stylesheet" href="/static/index.css"/>
+			<title>{ title }</title>
+		</head>
+		<body>
+			<main>
+				{ children... }
+			</main>
+		</body>
+	</html>
+}
+
+templ notFound() {
+	@mainLayout("Not Found") {
+		<div>Not Found</div>
+	}
+}
+
+templ homePage() {
+	@mainLayout("Home") {
+		<div>Home</div>
+	}
+}
